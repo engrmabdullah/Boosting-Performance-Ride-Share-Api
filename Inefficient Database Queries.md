@@ -9,7 +9,7 @@
 var allDrivers = await _dbContext.Drivers.ToListAsync(); // Fetching all drivers
 
 return allDrivers.Where(driver =&gt; CalculateDistance(userLat, userLong, driver.Lat, driver.Long) &lt;= radius).ToList();
-    }
+}
 
 private double CalculateDistance(double lat1, double lon1, double lat2, double lon2) {
 
@@ -28,7 +28,7 @@ Math.Sin(dLon / 2) * Math.Sin(dLon / 2);
 var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
 
 return R * c;
-    }
+}
 </code></pre>
 <hr>
 <p><strong>✅</strong> <strong>Best Practice: Optimize the Query for the Database</strong></p>
