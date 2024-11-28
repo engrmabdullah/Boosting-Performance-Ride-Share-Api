@@ -1,5 +1,5 @@
 <p><strong>🚀</strong> <strong>Finding available drivers within a specific radius</strong></p>
-<p>Poorly optimized database queries can severely impact the performance of your ride-share system, especially when handling high traffic. Here’s a <strong>real-world problem</strong> and its <strong>best practices solution</strong> with clear code examples. 🌟</p>
+
 <hr>
 <p><strong>❌</strong> <strong>Problem: Inefficient Database Queries</strong></p>
 <p>For a ride-share app, finding available drivers within a specific radius can be slow if the database queries aren’t optimized.</p>
