@@ -1,4 +1,4 @@
-<p><strong>🚀</strong> <strong>Boosting Performance in Your <a href="http://ASP.NET">ASP.NET</a> Core Ride-Share App</strong> <strong>🚀</strong></p>
+<p><strong>🚀</strong> <strong>Finding available drivers within a specific radius</strong></p>
 <p>Poorly optimized database queries can severely impact the performance of your ride-share system, especially when handling high traffic. Here’s a <strong>real-world problem</strong> and its <strong>best practices solution</strong> with clear code examples. 🌟</p>
 <hr>
 <p><strong>❌</strong> <strong>Problem: Inefficient Database Queries</strong></p>
