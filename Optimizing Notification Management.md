@@ -1,4 +1,4 @@
-<h3 id="optimizing-notification-management-in-asp.net-core-ride-share-applications"><strong>Optimizing Notification Management in <a href="http://ASP.NET">ASP.NET</a> Core Ride-Share Applications</strong></h3>
+<h3 id="optimizing-notification-management-in-asp.net-core-ride-share-applications"><strong>Optimizing Notification Management </strong></h3>
 <hr>
 <h3 id="❌-problem-inefficient-notifications-cause-delays"><strong>❌ Problem: Inefficient Notifications Cause Delays</strong></h3>
 <p>In ride-share apps, sending notifications (e.g., ride accepted or driver arrival) directly to external services can cause significant delays in request processing.</p>
