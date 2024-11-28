@@ -71,49 +71,30 @@ migrationBuilder.Sql("CREATE SPATIAL INDEX IX_Location ON Drivers (Location)");
 <p>1️⃣ <strong>Use Caching for Frequent Data:</strong><br>
 Example using Redis:</p>
 <pre><code>var cacheKey = $"driver:{driverId}:status";
-
 var status = await _cache.GetStringAsync(cacheKey);
-
-if (status == null)
-
-{
-
-status = await GetDriverStatusFromDb(driverId);
-
-await _cache.SetStringAsync(cacheKey, status, new DistributedCacheEntryOptions
-
-{
-
-AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
-
-});
-
+if (status == null)  {
+    status = await GetDriverStatusFromDb(driverId);
+    await _cache.SetStringAsync(cacheKey, status, new DistributedCacheEntryOptions
+    {
+    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5)
+    });
 }
 </code></pre>
 <p>2️⃣ <strong>Minimize Middleware Overhead:</strong><br>
 Use a minimal middleware pipeline:</p>
-<pre><code>app.UseRouting();
-
-app.UseAuthentication();
-
-app.UseAuthorization();
-
-app.UseEndpoints(endpoints =&gt; endpoints.MapControllers());
+<pre><code>    app.UseRouting();
+    app.UseAuthentication();
+    app.UseAuthorization();
+    app.UseEndpoints(endpoints =&gt; endpoints.MapControllers());
 </code></pre>
 <p>3️⃣ <strong>Batch Driver Location Updates:</strong><br>
 Update driver locations in batches instead of individual updates:</p>
-<pre><code>var driverUpdates = new List&lt;Driver&gt;
-
-{
-
-new Driver { Id = 1, Location = new Point(37.7749, -122.4194) { SRID = 4326 } },
-
-new Driver { Id = 2, Location = new Point(34.0522, -118.2437) { SRID = 4326 } }
-
-};
+<pre><code>var driverUpdates = new List&lt;Driver&gt; {
+    new Driver { Id = 1, Location = new Point(37.7749, -122.4194) { SRID = 4326 } },
+    new Driver { Id = 2, Location = new Point(34.0522, -118.2437) { SRID = 4326 } }
+    };
 
 _dbContext.Drivers.UpdateRange(driverUpdates);
-
 await _dbContext.SaveChangesAsync();
 </code></pre>
 
